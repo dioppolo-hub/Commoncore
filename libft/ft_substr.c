@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:32:55 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/01 12:43:00 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/01 13:10:43 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	}
 	return (NULL);
 }
-
+/* 
 int	main()
 {
 	const char str[] = "PortaAereiCarta";
 	unsigned int start = 10;
 	size_t len = 6;
 	printf("%s\n", ft_substr(str, start, len));
-}
+} */
