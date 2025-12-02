@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:14:36 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/01 11:11:07 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:00:18 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *s);
+char			*ft_substr(char const *str, unsigned int start, size_t len);
+char 			*ft_strjoin(char const *s1, char const *s2);
 
 #endif
