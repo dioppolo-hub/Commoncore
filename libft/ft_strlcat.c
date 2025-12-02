@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:04:11 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/28 13:36:15 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:29:01 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	return (i + src_len);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	dest1[14] = "123456789   ";
 	char	dest2[14] = "123456789   ";
@@ -45,4 +45,4 @@ int	main(void)
 
 	printf("mio:%zu   -%s-\n", ft_strlcat(dest1, src, size), dest1);
 	printf("reale:%zu    -%s-\n", strlcat(dest2, src, size), dest2);
-}
+} */

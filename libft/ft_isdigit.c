@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/01 11:13:14 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:27:59 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_isdigit(int c)
 {
-	unsigned char str;
+	unsigned char	str;
+
 	str = (unsigned char)c;
-	
-		if (!(str >= '0' && str <= '9'))
-			return (0);
+	if (!(str >= '0' && str <= '9'))
+		return (0);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/01 11:20:45 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:27:49 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_isalpha(int c)
 {
-	unsigned char str;
+	unsigned char	str;
+
 	str = (unsigned char)c;
-	
-		if (!(str >= 'A' && str <= 'Z')
-			&& !(str >= 'a' && str <= 'z'))
-			return (0);
+	if (!(str >= 'A' && str <= 'Z')
+		&& !(str >= 'a' && str <= 'z'))
+		return (0);
 	return (1);
 }
 

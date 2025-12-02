@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:20:32 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/28 11:31:22 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:30:08 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strdup(const char *s)
 {
 	int		i;
 	int		len;
-	size_t 	nmemb;
-	char 	*dup;
+	size_t	nmemb;
+	char	*dup;
 
 	i = 0;
 	len = 0;

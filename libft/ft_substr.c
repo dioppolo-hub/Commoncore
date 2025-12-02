@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:32:55 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/01 13:10:43 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:46:40 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,46 +15,36 @@
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
 	size_t	lenstr;
-	char *substr;
-	char *dup;
+	char	*substr;
 
 	i = 0;
-	j = 0;
 	lenstr = ft_strlen(str);
 	if (start > lenstr)
 		return (NULL);
 	if (len > lenstr)
 		len = lenstr - start;
 	if (len == 0)
-	{
-		dup = ft_strdup(str);
-		dup = "";
-		return (dup);
-	}
+		return (ft_strdup(""));
 	substr = malloc(len * sizeof(char));
 	while (str[i])
 	{
 		if (i >= start)
 		{
-			substr[j] = str[i];
-			j++;
-			if (j == len)
-			{
-				substr[j] = '\0';
+			substr[i] = str[i];
+			printf("%s\n", substr);
+			if (i == len)
 				return (substr);
-			}
 		}
 		i++;
 	}
 	return (NULL);
 }
-/* 
+
 int	main()
 {
 	const char str[] = "PortaAereiCarta";
-	unsigned int start = 10;
-	size_t len = 6;
+	unsigned int start = 5;
+	size_t len = 5;
 	printf("%s\n", ft_substr(str, start, len));
-} */
+}

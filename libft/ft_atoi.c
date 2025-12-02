@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:47:51 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/28 12:05:43 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:29:45 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 			pos = pos * -1;
 		i++;
 	}
