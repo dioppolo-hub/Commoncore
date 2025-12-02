@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 10:18:01 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 10:59:40 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:02:11 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ char *ft_strjoin(char const *s1, char const *s2)
 	Newstr[i] = '\0';
 	return (Newstr);
 }
-int	main()
+/* int	main()
 {
 	const char str1[] = "Porta";
 	const char str2[] = "Aerei";
 	printf("%s\n", ft_strjoin(str1, str2));
-}
+} */
