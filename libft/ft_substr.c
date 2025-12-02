@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:32:55 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:46:40 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:15:20 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	{
 		if (i >= start)
 		{
-			substr[i] = str[i];
-			printf("%s\n", substr);
-			if (i == len)
+			substr[i - start] = str[i];
+			if ((i - start) == len - 1)
 				return (substr);
 		}
 		i++;
@@ -41,10 +40,11 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	return (NULL);
 }
 
-int	main()
+/* int	main()
 {
 	const char str[] = "PortaAereiCarta";
 	unsigned int start = 5;
-	size_t len = 5;
+	size_t len = 10;
 	printf("%s\n", ft_substr(str, start, len));
-}
+	//NULL terminare la substr?
+} */
