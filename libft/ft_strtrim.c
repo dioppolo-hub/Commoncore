@@ -6,13 +6,13 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 11:01:28 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/03 12:12:11 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/03 12:43:08 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check(char const *set, const char c)
+static int	check(char const *set, const char c)
 {
 	int	i;
 
