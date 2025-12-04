@@ -6,24 +6,40 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:22:46 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/03 13:35:55 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/04 12:30:56 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static char	*freeall(char **mat, char *cpy)
+{
+	int	i;
+
+	i = 0;
+	while (mat[i])
+	{
+		free(mat[i]);
+		i++;
+	}
+	free(mat);
+	if (cpy)
+		free(cpy);
+	return (NULL);
+}
 static int	find_next_char(const char *s, int c)
 {
+
 	int	i;
 
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
-			return (i);
+		return (i);
 		i++;
 	}
-	return (0);
+	return (-1);
 }
 static int	countstr(char const *s, char c)
 {
@@ -32,43 +48,50 @@ static int	countstr(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (s[0] != c)
+		count++;
+	i++;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c && s[i - 1] == c)
 			count++;
 		i++;
 	}
+	//printf("count:%d\n", count);
 	return(count);
 }
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		j;
 	int		numbstr;
 	char	**mat;
 	char	*cpy;
 
 	i = 0;
-	j = 0;
 	numbstr = countstr(s, c);
 	cpy = ft_strdup(s);
-	mat = (char **)ft_calloc(numbstr, sizeof(char *));
+	mat = (char **)ft_calloc(numbstr + 1, sizeof(char *)); //modificato
 	if (!mat)
-		return (NULL);
-	while (find_next_char(cpy, c))
+	return (NULL);
+	while (cpy)
 	{
-		while (*cpy == c)
-			cpy++;
-		mat[i] = ft_substr(cpy, 0, find_next_char(cpy, c));
+		cpy = ft_strtrim(cpy, &c);
+		if (find_next_char(cpy, c) != -1) //
+			mat[i] = ft_substr(cpy, 0, find_next_char(cpy, c));
+		if (find_next_char(cpy, c) == -1) 
+			mat[i] = ft_substr(cpy, 0, ft_strlen(cpy));
+		if (!mat[i])
+			return ((char **)freeall(mat, cpy));
 		cpy = ft_strchr(cpy,c);
 		i++;
 	}
+	free(cpy);
 	return (mat);
 }
 
 int	main()
 {
-	const char s[] = "ciao a tutti quanti";
+	const char s[] = "    ciao a tutti quanti";
 	const char c = ' ';
 	char **mat = ft_split(s, c);
 
@@ -78,6 +101,6 @@ int	main()
 		printf("%s\n", mat[i]);
 		i++;
 	}
-
+	freeall(mat, NULL);
 }
 
