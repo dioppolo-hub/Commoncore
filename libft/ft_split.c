@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:22:46 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/04 12:30:56 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/04 13:02:07 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,21 @@ static char	*freeall(char **mat, char *cpy)
 		free(cpy);
 	return (NULL);
 }
+
 static int	find_next_char(const char *s, int c)
 {
-
 	int	i;
 
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
-		return (i);
+			return (i);
 		i++;
 	}
 	return (-1);
 }
+
 static int	countstr(char const *s, char c)
 {
 	int	i;
@@ -57,9 +58,9 @@ static int	countstr(char const *s, char c)
 			count++;
 		i++;
 	}
-	//printf("count:%d\n", count);
-	return(count);
+	return (count);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -70,26 +71,26 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	numbstr = countstr(s, c);
 	cpy = ft_strdup(s);
-	mat = (char **)ft_calloc(numbstr + 1, sizeof(char *)); //modificato
+	mat = (char **)ft_calloc(numbstr + 1, sizeof(char *));
 	if (!mat)
-	return (NULL);
+		return (NULL);
 	while (cpy)
 	{
 		cpy = ft_strtrim(cpy, &c);
-		if (find_next_char(cpy, c) != -1) //
+		if (find_next_char(cpy, c) != -1)
 			mat[i] = ft_substr(cpy, 0, find_next_char(cpy, c));
-		if (find_next_char(cpy, c) == -1) 
+		if (find_next_char(cpy, c) == -1)
 			mat[i] = ft_substr(cpy, 0, ft_strlen(cpy));
 		if (!mat[i])
 			return ((char **)freeall(mat, cpy));
-		cpy = ft_strchr(cpy,c);
+		cpy = ft_strchr(cpy, c);
 		i++;
 	}
 	free(cpy);
 	return (mat);
 }
 
-int	main()
+/* int	main()
 {
 	const char s[] = "    ciao a tutti quanti";
 	const char c = ' ';
@@ -102,5 +103,4 @@ int	main()
 		i++;
 	}
 	freeall(mat, NULL);
-}
-
+} */

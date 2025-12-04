@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 11:01:28 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/04 12:03:14 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/04 13:00:40 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static int	check(char const *set, const char c)
 	i = 0;
 	while (set[i])
 	{
-		if(set[i] == c)
+		if (set[i] == c)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
@@ -40,7 +40,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	while (s1[start] && check(set, s1[start]))
 		start++;
 	while (s1[end] && check(set, s1[end]))
-		end--;		
+		end--;
 	return (ft_substr(s1, start, end - start + 1));
 }
 
