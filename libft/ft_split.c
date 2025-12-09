@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:22:46 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/09 10:02:11 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:30:08 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,8 @@ char	**ft_split(char const *s, char c)
 
 /* int	main()
 {
-	const char s[] = " ciao a tutti quanti ";
-	const char c = ' ';
+	const char s[] = " ciaoa tutti quanti ";
+	const char c = 'z';
 	char **mat = ft_split(s, c);
 
 	int i = 0;
@@ -118,4 +118,4 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	freeall(mat, NULL);
-} */
+}*/
