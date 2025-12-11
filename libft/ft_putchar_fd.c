@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 11:45:32 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 10:01:51 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/10 10:26:46 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/11 10:02:48 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
+	write(fd, &c, 1);
 }
 
-/* int	main(void)
+/* int	main()
 {
-	char	string = 'A';
+	char	c = 'a';
+	int		fd = 4;
 
-	printf("stringa:%c\n", string);
-	ft_toupper(string);
-	printf("return:%c\n", ft_toupper(string));
-} */
+	ft_putchar_fd(c, fd);
+	printf("[%d]\n", fd);
+	printf("{%c}\n", c);
+}  */

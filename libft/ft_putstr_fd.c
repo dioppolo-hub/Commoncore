@@ -1,49 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 11:57:38 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 10:02:18 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/10 10:40:40 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/11 10:02:40 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	char	c;
-	char	*cpy;
+	int	i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	cpy = ft_strdup(s);
-	if (!cpy)
-		return (NULL);
 	while (s[i])
 	{
-		c = f(10, s[i]);
-		cpy[i] = c;
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (cpy);
-}
-/* char	f_tolower(unsigned int index, char c)
-{
-	(void)index;
-	if(c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
 }
 
-int	main()
+/* int	main()
 {
-	char *str = "HELLO WORLD";
+	char	s[] = "Caracas"; 
+	int		fd = 0;
 
-	printf("prima:%s\n", str);
-	printf("dopo:%s\n", ft_strmapi(str, f_tolower));
+	ft_putstr_fd(s, fd);
 } */
