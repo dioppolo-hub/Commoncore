@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:14:36 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 10:00:27 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/11 12:31:54 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 # include <string.h>
 # include <strings.h>
 # include <ctype.h>
+
+typedef struct s_list
+{
+	void 	*content;
+	struct 	s_list *next;
+} 			t_list;
 
 int				ft_isalnum(int c);
 size_t			ft_strlen(const char *str);
@@ -55,5 +61,6 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+t_list			*ft_lstnew(void *content);
 
 #endif

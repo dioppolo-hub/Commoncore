@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 09:59:46 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 12:31:42 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/11 12:40:52 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/11 13:01:58 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list* new = NULL;
+	t_list* nuovo = NULL;
 
-	new = malloc(sizeof(t_list));
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	nuovo = malloc(sizeof(t_list));
+	nuovo->content = NULL;
+	nuovo->next = new;
+	new = nuovo;
 }
 
-/* int	main()
+int		main()
 {
-	void* content = "ciao";
+	t_list **lst;
+	t_list *new;
+	ft_lstadd_front(lst, new);
 
-	t_list* node = ft_lstnew(content);
-	printf("content: %s\n", (char *)node->content);
-	printf("next: %p\n", node->next);
-} */
+	printf("next: %p\n", new->next);
+}

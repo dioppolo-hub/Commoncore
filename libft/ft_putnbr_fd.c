@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 10:54:10 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 10:03:25 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/11 12:09:53 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 static long int	countlen(long int k)
 {
 	long int	count;
-	long int	mod;
 
 	count = 0;
-	mod = 0;
 	if (k < 0)
 	{
 		k = k * -1;
 	}
 	while (k != 0)
 	{
-		mod = k % 10;
 		k = k / 10;
 		count++;
 	}
