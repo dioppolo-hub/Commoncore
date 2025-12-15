@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 12:40:52 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/15 12:07:03 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/15 12:26:42 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/15 16:35:24 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	new->next = (*lst);
-	(*lst) = new;
+	t_list	*corrente;
+
+	corrente = *lst;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	while (corrente->next != NULL)
+		corrente = corrente->next;
+	corrente->next = new;
 }
 /* void	printlist(t_list *p)
 {
@@ -35,14 +44,15 @@ int		main()
 	t_list *nodo1 = NULL;
 	t_list *nodo2 = NULL;
 	t_list *new = NULL;
+	//t_list *provavuota = NULL;
 	
 	nodo1 = (t_list *)malloc(sizeof(t_list *));
 	nodo2 = (t_list *)malloc(sizeof(t_list *));
 	new = (t_list *)malloc(sizeof(t_list *));
 
-	nodo1->content = "a";
-	nodo2->content = "tutti";
-	new->content = "ciao";
+	nodo1->content = "ciao";
+	nodo2->content = "a";
+	new->content = "tutti";
 
 	nodo1->next = nodo2;
 	nodo2->next = NULL;
@@ -51,7 +61,7 @@ int		main()
 	
 	printf("prima:\n");
 	printlist(testa);
-	ft_lstadd_front(&testa, new);
+	ft_lstadd_back(&testa, new);
 	printf("dopo:\n");
 	printlist(testa);
 } */

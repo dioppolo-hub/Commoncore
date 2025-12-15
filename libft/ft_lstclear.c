@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 09:59:46 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/15 16:36:01 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/15 13:09:28 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/15 16:12:32 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*new;
+	t_list	*tmp;
 
-	new = NULL;
-	new = malloc(sizeof(t_list));
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (!lst || !del)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = tmp;
+	}
+	*lst = NULL;
 }
 /* void	printlist(t_list *p)
 {
@@ -31,13 +36,28 @@ t_list	*ft_lstnew(void *content)
 		else
 			printf("[%s]", (char *)p->content);
 		p = p->next;
-		printf("\n");
 	}
+	printf("\n");
+}
+void	del(void *content)
+{
+	free(content);
 }
 int	main()
 {
-	void* content = "ciao";
+	t_list *testa = NULL;
 
-	t_list* node = ft_lstnew(content);
-	printlist(node);
+	char *str1 = ft_strdup("Hello");
+	char *str2 = ft_strdup("World");
+	char *str3 = ft_strdup("Everyone");
+
+	ft_lstadd_back(&testa, ft_lstnew(str1));
+	ft_lstadd_back(&testa, ft_lstnew(str2));
+	ft_lstadd_back(&testa, ft_lstnew(str3));
+
+	printf("prima:\n");
+	printlist(testa);
+	ft_lstclear(&testa, del);
+	printf("dopo:\n");
+	printlist(testa);
 } */

@@ -6,16 +6,16 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:45:32 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 10:01:51 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:52:15 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
 	return (c);
 }
 
@@ -24,6 +24,5 @@ int	ft_toupper(int c)
 	char	string = 'A';
 
 	printf("stringa:%c\n", string);
-	ft_toupper(string);
-	printf("return:%c\n", ft_toupper(string));
+	printf("return:%c\n", ft_tolower(string));
 } */

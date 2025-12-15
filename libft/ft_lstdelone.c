@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 12:40:52 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/15 12:07:03 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/15 12:42:57 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/15 16:11:55 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	new->next = (*lst);
-	(*lst) = new;
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
-/* void	printlist(t_list *p)
+/* void	del(void *content)
 {
+	free(content);
+}
+void	printlist(t_list *p)
+{
+	if(p == NULL)
+		return;
 	while (p != NULL)
 	{
 		if (p->next != NULL)
@@ -31,27 +39,26 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 }
 int		main()
 {
-	t_list *testa;
-	t_list *nodo1 = NULL;
-	t_list *nodo2 = NULL;
-	t_list *new = NULL;
-	
-	nodo1 = (t_list *)malloc(sizeof(t_list *));
-	nodo2 = (t_list *)malloc(sizeof(t_list *));
-	new = (t_list *)malloc(sizeof(t_list *));
+	t_list *nodo;
+	char *str;
 
-	nodo1->content = "a";
-	nodo2->content = "tutti";
-	new->content = "ciao";
-
-	nodo1->next = nodo2;
-	nodo2->next = NULL;
-
-	testa = nodo1;
-	
+	str = (char *)malloc(sizeof(char) * 6);
+	if (!str)
+		return (0);
+	str[0] = 'H';
+	str[1] = 'e';
+	str[2] = 'l';
+	str[3] = 'l';
+	str[4] = 'o';
+	str[5] = '\0';
+	nodo = (t_list *)malloc(sizeof(t_list));
+	if (!nodo)
+		return (0);
+	nodo->content = str;
+	nodo->next = NULL;
 	printf("prima:\n");
-	printlist(testa);
-	ft_lstadd_front(&testa, new);
+	printlist(nodo);
+	ft_lstdelone(nodo, del);
 	printf("dopo:\n");
-	printlist(testa);
+	printlist(nodo);
 } */

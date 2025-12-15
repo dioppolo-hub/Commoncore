@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:03:19 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 10:27:19 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:08:43 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ char	*ft_itoa(int n)
 	return (convert(n, j, str));
 }
 
-int main()
+/* int main()
 {
 	int	n = -1234567;
 	char *itoato = ft_itoa(n);
 	printf("%s\n",itoato);
-}
+} */
