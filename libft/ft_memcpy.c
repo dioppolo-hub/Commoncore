@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:38:58 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/25 12:02:46 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:59:20 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@ void	*ft_memcpy(void	*dest, const void	*src, size_t	n)
 	char	*str1;
 	char	*str2;
 
+	if (!dest || !src || n < 0)
+		return (NULL);
 	i = 0;
 	str1 = (char *)dest;
 	str2 = (char *)src;
-	if (!dest || !src || n < 0)
-		return (NULL);
 	while (i < n)
 	{
-		*str1 = *str2;
-		str1++;
-		str2++;
+		str1[i] = str2[i];
 		i++;
 	}
 	return (dest);

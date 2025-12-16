@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:56:03 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/28 11:27:51 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:55:40 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,12 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
 	void	*p;
-	char	*ptr;
 
 	p = malloc(nmemb * size);
 	if (p == NULL)
 		return (p);
-	ptr = (char *)p;
-	i = 0;
-	while (i < nmemb)
-	{
-		ptr[i] = 0;
-		i++;
-	}
+	ft_bzero(p, (nmemb * size));
 	return (p);
 }
 
