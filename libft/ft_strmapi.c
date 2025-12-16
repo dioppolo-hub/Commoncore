@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:57:38 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/11 10:02:18 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:04:41 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		c = f(10, s[i]);
+		c = f(i, s[i]);
 		cpy[i] = c;
 		i++;
 	}

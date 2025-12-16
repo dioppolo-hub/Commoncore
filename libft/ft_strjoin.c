@@ -6,25 +6,18 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 10:18:01 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/04 13:00:01 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:13:40 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static char	*scorri_s(char const *s1, char const *s2,
+	char *newstr, size_t lens1)
 {
-	size_t		lens1;
-	size_t		lens2;
-	size_t		tot;
-	int			i;
-	char		*newstr;
+	size_t	i;
 
-	lens1 = ft_strlen(s1);
-	lens2 = ft_strlen(s2);
-	tot = lens1 + lens2;
 	i = 0;
-	newstr = malloc(tot * sizeof(char));
 	while (s1[i])
 	{
 		newstr[i] = s1[i];
@@ -37,6 +30,26 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	newstr[i] = '\0';
 	return (newstr);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t		lens1;
+	size_t		lens2;
+	size_t		tot;
+	size_t		i;
+	char		*newstr;
+
+	if (!s1 || !s2)
+		return (NULL);
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	tot = lens1 + lens2;
+	i = 0;
+	newstr = malloc((tot + 1) * sizeof(char));
+	if (!newstr)
+		return (NULL);
+	return (scorri_s(s1, s2, newstr, lens1));
 }
 /* int	main()
 {

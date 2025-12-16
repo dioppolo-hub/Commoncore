@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 09:39:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/26 09:44:28 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:33:46 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	*last;
 
+	if (!s)
+		return (NULL);
+	last = NULL;
 	i = 0;
 	while (s[i])
-		i++;
-	while (s[i - 1])
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i--;
+		if ((unsigned char)s[i] == (unsigned char)c)
+			last = ((char *)&s[i]);
+		i++;
 	}
-	return (NULL);
+	if ((unsigned char)c == '\0')
+		return ((char *)&s[i]);
+	return (last);
 }
 
 /* int	main()

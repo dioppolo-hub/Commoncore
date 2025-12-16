@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 09:47:49 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:29:15 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 10:38:16 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*str;
+	unsigned char	newc;
 
 	str = (unsigned char *)s;
+	newc = (unsigned char)c;
 	i = 0;
-	while (str[i] && i < n)
+	while (i < n)
 	{
-		if (str[i] == c)
-			return ((unsigned char *)&s[i]);
+		if (str[i] == newc)
+			return ((unsigned char *)(str + i));
 		i++;
 	}
 	return (NULL);

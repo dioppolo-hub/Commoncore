@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:03:19 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/15 16:08:43 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:30:20 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	countlen(long int n)
 	count = 0;
 	if (n < 0)
 		count++;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n = n / 10;
@@ -73,7 +75,8 @@ char	*ft_itoa(int n)
 
 /* int main()
 {
-	int	n = -1234567;
+	int	n = 0;
 	char *itoato = ft_itoa(n);
 	printf("%s\n",itoato);
+	free(itoato);
 } */

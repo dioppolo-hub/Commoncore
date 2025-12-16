@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:17:49 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/03 12:11:53 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:39:53 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
+	if (!big || !little)
+		return (NULL);
 	if (little[j] == '\0')
 		return ((char *)big);
 	while (i < len && big[i])
 	{
 		j = 0;
-		while (big[i + j] == little[j] && little[j])
+		while (i + j < len && big[i + j] == little[j] && little[j])
 			j++;
 		if (little[j] == '\0')
 			return ((char *)&big[i]);

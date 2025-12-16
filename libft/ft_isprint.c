@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:28:03 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:00:17 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_isprint(int c)
 	unsigned char	str;
 
 	str = (unsigned char)c;
-	if (!(str >= '\0' && str <= 31))
-		return (0);
-	return (1);
+	if (str >= 32 && str <= 126)
+		return (1);
+	return (0);
 }
 /*
 int	main ()

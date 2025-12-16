@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:59:46 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/15 16:36:01 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:54:15 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ t_list	*ft_lstnew(void *content)
 		else
 			printf("[%s]", (char *)p->content);
 		p = p->next;
-		printf("\n");
 	}
+	printf("\n");
 }
 int	main()
 {
 	void* content = "ciao";
 
 	t_list* node = ft_lstnew(content);
-	printlist(node);
+	printlist(node);	
 } */

@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:04:11 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:29:01 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 10:59:03 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	i = 0;
 	j = 0;
 	src_len = 0;
+	if (!src || !dest)
+		return (0);
+	if (size == 0)
+		return (ft_strlen(src));
 	while (src[src_len])
 		src_len++;
-	while (dest[i])
+	while (i < size && dest[i])
 		i++;
 	if (size <= i)
-		return (i + size);
+		return (size + src_len);
 	while (src[j] && (i + j) < (size - 1))
 	{
 		dest[i + j] = src[j];

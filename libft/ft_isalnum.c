@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:28:39 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:49:06 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_isalnum(int c)
 
 	str = (unsigned char)c;
 	if (!(str >= '0' && str <= '9')
-		&& !(str >= 'a' && str <= 'b')
+		&& !(str >= 'a' && str <= 'z')
 		&& !(str >= 'A' && str <= 'Z'))
 		return (0);
 	return (1);

@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 09:45:28 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/26 09:47:00 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:47:20 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	if (!s1 || !s2)
+		return (0);
+	if (n == 0)
+		return (0);
+	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	return (s1[i] - s2[i]);
+	if (i == n)
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
 /* int	main(void)
 {
 	char	s1[] = ";lkjhg";
 	char	s2[] = "asdfgh";
+	size_t		n = 3;
 
-	printf("mio:%d\n", ft_strcmp(s1, s2));
-	printf("reale:%d\n", strcmp(s1, s2));
+	printf("mio:%d\n", ft_strncmp(s1, s2, n));
+	printf("reale:%d\n", strncmp(s1, s2, n));
 } */

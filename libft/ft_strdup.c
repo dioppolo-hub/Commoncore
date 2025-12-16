@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:20:32 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:30:08 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 10:48:56 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,26 @@ char	*ft_strdup(const char *s)
 	size_t	nmemb;
 	char	*dup;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	len = 0;
 	nmemb = ft_strlen(s);
-	dup = (char *)malloc(nmemb * sizeof(char));
+	dup = (char *)malloc((nmemb + 1) * sizeof(char));
+	if (!dup)
+		return (NULL);
 	while (s[i])
 	{
 		dup[i] = s[i];
 		i++;
 	}
-	return ((char *)dup);
+	dup[i] = '\0';
+	return (dup);
 }
 
 /* int	main()
 {
-	const char str[] = "Baldovino IV";
+	const char str[] = "";
 
 	printf("vera:%s\n", str);
 	printf("copia:%s\n", ft_strdup(str));
