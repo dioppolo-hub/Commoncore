@@ -1,6 +1,6 @@
+*This project has been created as part of the 42 curriculum by dioppolo.*
 # Commoncore
 Libft
-This project has been created as part of the 42 curriculum by dioppolo.
 
 Description
 Libft è il primo progetto del curriculum 42, il cui obiettivo è codificare una libreria C (libft.a) che contenga una serie di funzioni di uso generale. Questo progetto è fondamentale per comprendere il funzionamento delle funzioni della libreria standard C (libc), implementandole autonomamente, e per creare una risorsa essenziale che sarà utilizzata in tutti i progetti successivi del curriculum.
