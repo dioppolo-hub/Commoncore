@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:03:19 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/16 15:30:20 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/18 11:24:45 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_itoa(int n)
 	i = 0;
 	len = countlen(n);
 	j = len - 1;
-	str = (char *)ft_calloc(len + 1, sizeof(char *));
+	str = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	str[i] = '\0';
