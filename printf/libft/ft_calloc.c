@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:00:16 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/18 11:29:42 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/11/26 11:56:03 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/18 11:26:07 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s, const void *s2, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	void	*p;
+	size_t	totsize;
 
-	str1 = (unsigned char *)s;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
-	}
-	return (0);
+	totsize = size * nmemb;
+	if (size > 0 && totsize / size != nmemb)
+		return (NULL);
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (p);
+	ft_bzero(p, (nmemb * size));
+	return (p);
 }
 
 /* int	main()
 {
-	unsigned char	s[] = "abfderty";
-	unsigned char	s2[] = "";
-	size_t n = 5;
-
-	printf("mio:%d\n", ft_memcmp(s, s2, n));
-	printf("reale:%d\n", memcmp(s, s2, n));
+	size_t nmemb = 10;
+	size_t size = 4;
+	
+	ft_calloc(nmemb, size);
 } */

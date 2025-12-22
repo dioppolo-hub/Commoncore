@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:27:55 by dioppolo         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:49:06 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_isalnum(int c)
 {
-	if (!(c >= 0 && c <= 127))
+	unsigned char	str;
+
+	str = (unsigned char)c;
+	if (!(str >= '0' && str <= '9')
+		&& !(str >= 'a' && str <= 'z')
+		&& !(str >= 'A' && str <= 'Z'))
 		return (0);
 	return (1);
 }
@@ -23,6 +28,6 @@ int	ft_isascii(int c)
 {
 	int c = 'a'; 
 
-	printf("mio:%d\n", ft_isascii(c));
-	printf("reale:%d\n", isascii(c));
+	printf("mio:%d\n", ft_isalnum(c));
+	printf("reale:%d\n", isalnum(c));
 } */

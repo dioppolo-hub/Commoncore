@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:00:16 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/18 11:29:42 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/11/25 12:15:49 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/16 11:23:21 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s, const void *s2, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	int	i;
 
-	str1 = (unsigned char *)s;
-	str2 = (unsigned char *)s2;
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	return (0);
+	if ((unsigned char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
 
 /* int	main()
 {
-	unsigned char	s[] = "abfderty";
-	unsigned char	s2[] = "";
-	size_t n = 5;
-
-	printf("mio:%d\n", ft_memcmp(s, s2, n));
-	printf("reale:%d\n", memcmp(s, s2, n));
+	const char	str[] = "1234sdf asd";
+	int	c = 'a';
+	printf("mio:%s\n", ft_strchr(str, c));
+	printf("reale:%s\n", strchr(str, c));
 } */

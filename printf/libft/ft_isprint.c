@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:00:16 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/18 11:29:42 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/16 12:00:17 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s, const void *s2, size_t n)
+int	ft_isprint(int c)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	unsigned char	str;
 
-	str1 = (unsigned char *)s;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
-	}
+	str = (unsigned char)c;
+	if (str >= 32 && str <= 126)
+		return (1);
 	return (0);
 }
-
-/* int	main()
+/*
+int	main ()
 {
-	unsigned char	s[] = "abfderty";
-	unsigned char	s2[] = "";
-	size_t n = 5;
+	int c = 'a'; 
 
-	printf("mio:%d\n", ft_memcmp(s, s2, n));
-	printf("reale:%d\n", memcmp(s, s2, n));
-} */
+	printf("mio:%d\n", ft_isprint(c));
+	printf("reale:%d\n", isprint(c));
+}*/

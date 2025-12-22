@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:00:16 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/18 11:29:42 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/11/25 09:54:07 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/16 11:12:48 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s, const void *s2, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	unsigned int	i;
 
-	str1 = (unsigned char *)s;
-	str2 = (unsigned char *)s2;
+	if (!src || !dest)
+		return (0);
 	i = 0;
-	while (i < n)
+	if (size > 0)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		while (src[i] && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	return (0);
+	return (ft_strlen(src));
 }
 
-/* int	main()
+/* int	main(void)
 {
-	unsigned char	s[] = "abfderty";
-	unsigned char	s2[] = "";
-	size_t n = 5;
+	char	src[] = "campanello";
+	char	dest[] = "";
+	unsigned int	size = 15;
 
-	printf("mio:%d\n", ft_memcmp(s, s2, n));
-	printf("reale:%d\n", memcmp(s, s2, n));
+	printf("%d\n %s\n", ft_strlcpy(dest, src, size), dest);
 } */

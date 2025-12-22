@@ -1,28 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:27:55 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/22 09:49:18 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/22 09:49:44 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int	ft_isascii(int c)
-{
-	if (!(c >= 0 && c <= 127))
-		return (0);
-	return (1);
-}
-
-/* int	main ()
-{
-	int c = 'a'; 
-
-	printf("mio:%d\n", ft_isascii(c));
-	printf("reale:%d\n", isascii(c));
-} */

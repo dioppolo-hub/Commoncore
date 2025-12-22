@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/02 09:27:55 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/11/25 11:45:32 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/15 16:52:15 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_tolower(int c)
 {
-	if (!(c >= 0 && c <= 127))
-		return (0);
-	return (1);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }
 
-/* int	main ()
+/* int	main(void)
 {
-	int c = 'a'; 
+	char	string = 'A';
 
-	printf("mio:%d\n", ft_isascii(c));
-	printf("reale:%d\n", isascii(c));
+	printf("stringa:%c\n", string);
+	printf("return:%c\n", ft_tolower(string));
 } */

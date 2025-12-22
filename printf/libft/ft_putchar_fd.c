@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:00:16 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/18 11:29:42 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/12/10 10:26:46 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/11 10:02:48 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s, const void *s2, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
-
-	str1 = (unsigned char *)s;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
-	}
-	return (0);
+	write(fd, &c, 1);
 }
 
 /* int	main()
 {
-	unsigned char	s[] = "abfderty";
-	unsigned char	s2[] = "";
-	size_t n = 5;
+	char	c = 'a';
+	int		fd = 4;
 
-	printf("mio:%d\n", ft_memcmp(s, s2, n));
-	printf("reale:%d\n", memcmp(s, s2, n));
-} */
+	ft_putchar_fd(c, fd);
+	printf("[%d]\n", fd);
+	printf("{%c}\n", c);
+}  */

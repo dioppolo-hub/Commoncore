@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:00:16 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/18 11:29:42 by dioppolo         ###   ########.fr       */
+/*   Created: 2025/11/26 09:47:49 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/16 10:38:16 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s, const void *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	unsigned char	*str;
+	unsigned char	newc;
 
-	str1 = (unsigned char *)s;
-	str2 = (unsigned char *)s2;
+	str = (unsigned char *)s;
+	newc = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		if (str[i] == newc)
+			return ((unsigned char *)(str + i));
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
-/* int	main()
+/* int main()
 {
-	unsigned char	s[] = "abfderty";
-	unsigned char	s2[] = "";
-	size_t n = 5;
-
-	printf("mio:%d\n", ft_memcmp(s, s2, n));
-	printf("reale:%d\n", memcmp(s, s2, n));
+	const char	str[] = "hsdfutrsa";
+	int	c = 'f';
+	size_t	n = 9;
+	printf("mio:%s\n", (unsigned char *)ft_memchr(str, c, n));
+	printf("reale:%s\n", (unsigned char *)memchr(str, c, n));
 } */
